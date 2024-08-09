@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste des auteurs{% endblock %}
+
+{% block body %}
+
+    {% for author in authors %}
+
+    <ul class="flex flex-col gap-2 justify-center">
+        <li class="p-4 mb-4 bg-blue-800 shadow-xl capitalize hover:italic text-2xl">
+            <a href="{{ path('author_item', {id : author.id}) }}">{{author.firstName}} {{author.lastName}}</a>
+        </li>
+    </ul>
+
+    {% endfor %}
+
+{% endblock %}
