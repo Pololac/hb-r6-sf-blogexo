@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+{# FLASH MESSAGES #}
+    {% for type, messages in app.flashes(['success', 'info', 'warning', 'danger']) %}
+      {% for message in messages %}
+        {% if type == 'success' %}
+            <div class="p-4 mb-4 text-sm text-green-800 rounded-lg bg-green-50 dark:bg-gray-800 dark:text-green-400" role="alert">{{ message }}
+            </div>
+            
+        {% elseif type == 'info' %}
+            <div class="p-4 mb-4 text-sm text-blue-800 rounded-lg bg-blue-50 dark:bg-gray-800 dark:text-blue-400" role="alert">
+                {{ message }}
+            </div>
+        {% elseif type == 'warning' %}
+            <div class="p-4 mb-4 text-sm text-yellow-800 rounded-lg bg-yellow-50 dark:bg-gray-800 dark:text-yellow-400" role="alert">
+                {{ message }}
+            </div>
+
+        {% elseif type == 'danger' %}
+            <div class="p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400" role="alert">
+                {{ message }}
+            </div>
+        {% endif %}
+      {% endfor %}
+    {% endfor %}
+
+{% endblock %}
