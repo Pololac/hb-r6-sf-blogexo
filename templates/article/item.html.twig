@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{article.title}}{% endblock %}
+
+{% block body %}
+
+    <h1 class="text-5xl text-center font-bold mb-10">{{article.title}}</h1>
+        <p class="text-center italic">{{article.author.firstName}} {{article.author.lastName}}, le {{article.createdAt|date('Y-m-d')}}</p>
+        <p>Fugiat veniam nisi esse in. In amet cillum excepteur anim laboris esse ad non. Ex do Lorem ullamco nisi anim id reprehenderit velit.<p>
+        <p class="">{{article.content}}</p>
+
+{% endblock %}
