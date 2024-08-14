@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} {{user.email}} {% endblock %}
+
+{% block body %}
+<div class="mx-auto max-w-[900px]">
+  <h1 class="text-3xl my-6">User {{ user.email }}</h1>
+
+  {% if user.profilePicFilename is not null %}
+  <p>
+    <img
+      src="{{ '/uploads/user/' ~ user.profilePicFilename }}"
+      alt="{{ user.email }}"
+      class="rounded-full w-96 h-96"
+    />
+  </p>
+  {% endif %}
+
+  <div>{{ form(form) }}</div>
+</div>
+{% endblock %}
