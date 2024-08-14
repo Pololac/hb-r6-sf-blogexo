@@ -28,7 +28,7 @@ class ArticleController extends AbstractController
     #[Route('/article/{id}', name: 'article_item')]
     public function item(Article $article): Response 
     {
-        
+        test
         return $this->render('article/item.html.twig', [
             'article' => $article,
             ]
